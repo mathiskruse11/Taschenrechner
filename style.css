@@ -8,9 +8,18 @@
   font-size: 2rem;
 }
 
-.containerCounter {
+.calculator {
   display: flex;
   flex-direction: row;
+}
+
+.containerCalculator {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  min-width: 65;
+  padding: 1rem;
+  border-right: solid 1px;
 }
 
 .buttonGrid {
