@@ -33,4 +33,10 @@
   height: 150px;
   font-size: 2rem;
   border-radius: 16px;
+  transition: filter 0.3s ease;
+}
+
+.buttons:hover {
+  filter: brightness(0.8);
+  cursor: pointer;
 }
