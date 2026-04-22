@@ -16,8 +16,7 @@
 .containerCalculator {
   display: flex;
   flex-direction: column;
-  width: 70%;
-  min-width: 65;
+  width: 60%;
   padding: 1rem;
   border-right: solid 1px;
 }
@@ -31,6 +30,7 @@
 }
 
 .buttons {
-  height: 100px;
+  height: 150px;
   font-size: 2rem;
+  border-radius: 16px;
 }
