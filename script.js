@@ -1,6 +1,6 @@
 let currentInput = 0;
 let previousInput = 0;
-let operator = "";
+let operator = "+";
 
 function number(num) {
   console.log(currentInput);
@@ -13,49 +13,34 @@ function number(num) {
 function divided() {
   performOperator();
   operator = "/";
-  currentInput = 0;
   pushInput();
-  updateInput();
 }
 
 function multiplied() {
   performOperator();
   operator = "*";
-  currentInput = 0;
   pushInput();
-  updateInput();
 }
 
 function subtract() {
   performOperator();
   operator = "-";
-  currentInput = 0;
-  pushInput();
-  updateInput();
-}
-
-function clear() {
-  performOperator();
-  operator = "";
-  currentInput = 0;
-  pushInput();
-  updateInput();
-}
-
-function enter() {
-  performOperator();
-  operator = "=";
-  currentInput = 0;
-  updateInput();
   pushInput();
 }
 
 function add() {
   performOperator();
   operator = "+";
-  currentInput = 0;
-  updateInput();
   pushInput();
+}
+
+function enter() {}
+
+function clearEntry() {
+  currentInput = 0;
+  previousInput = 0;
+  updateInput();
+  updatePreviousInput();
 }
 
 function performOperator() {
@@ -71,12 +56,19 @@ function performOperator() {
   }
 
   previousInput = currentResult;
+
+  currentInput = 0;
+  updateInput();
 }
 
 function updateInput() {
   document.getElementById("input").innerHTML = currentInput;
 }
 
+function updatePreviousInput() {
+  document.getElementById("preStep").innerHTML = previousInput;
+}
+
 function pushInput() {
-  document.getElementById("preStep").innerHTML = previousInput + "+";
+  document.getElementById("preStep").innerHTML = previousInput + operator;
 }
