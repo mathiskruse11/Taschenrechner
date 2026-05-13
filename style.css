@@ -1,3 +1,8 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 #preStep {
   text-align: right;
   font-size: 1.5rem;
@@ -39,4 +44,19 @@
 .buttons:hover {
   filter: brightness(0.8);
   cursor: pointer;
+}
+
+.history {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  gap: 0.5rem;
+  width: 40%;
+  border: 1px solid;
+  border-radius: 16px;
+}
+
+.history p {
+  font-size: 1.5rem;
+  padding-right: 0.5rem;
 }

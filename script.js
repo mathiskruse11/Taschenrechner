@@ -37,14 +37,18 @@ function add() {
 
 function enter() {
   performOperator();
-  currentResult = 0;
-  clearEntry();
+  currentInput = currentResult;
+  previousInput = 0;
+  operator = "=";
+  updateInput();
+  updatePreviousInput();
 }
 
 function clearEntry() {
   currentInput = 0;
   operator = "+";
   previousInput = 0;
+  currentResult = 0;
   updateInput();
   updatePreviousInput();
 }
