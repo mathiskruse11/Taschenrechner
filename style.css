@@ -23,7 +23,6 @@
   flex-direction: column;
   width: 60%;
   padding: 1rem;
-  border-right: solid 1px;
 }
 
 .buttonGrid {
@@ -51,6 +50,7 @@
   flex-direction: column;
   text-align: right;
   gap: 0.5rem;
+  margin: 1rem;
   width: 40%;
   border: 1px solid;
   border-radius: 16px;
