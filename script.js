@@ -51,6 +51,7 @@ function clearEntry() {
   currentResult = 0;
   updateInput();
   updatePreviousInput();
+  clearHistory();
 }
 
 function performOperator() {
@@ -98,4 +99,11 @@ function updatePreviousInput() {
 
 function pushInput() {
   document.getElementById("preStep").innerHTML = previousInput + operator;
+}
+
+function clearHistory() {
+  const history = document.getElementById("history");
+  while (history.firstChild) {
+    history.removeChild(history.firstChild);
+  }
 }
