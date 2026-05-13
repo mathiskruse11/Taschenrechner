@@ -1,5 +1,6 @@
 let currentInput = 0;
 let previousInput = 0;
+let currentResult = 0;
 let operator = "+";
 
 function number(num) {
@@ -34,7 +35,11 @@ function add() {
   pushInput();
 }
 
-function enter() {}
+function enter() {
+  operator = "=";
+  addCalcEntry();
+  clearEntry();
+}
 
 function clearEntry() {
   currentInput = 0;
@@ -44,7 +49,6 @@ function clearEntry() {
 }
 
 function performOperator() {
-  let currentResult = 0;
   if (operator === "+") {
     currentResult = previousInput + currentInput;
   } else if (operator === "/") {
@@ -55,10 +59,28 @@ function performOperator() {
     currentResult = previousInput - currentInput;
   }
 
+  if (previousInput !== 0) {
+    addCalcEntry();
+  }
+
   previousInput = currentResult;
 
   currentInput = 0;
   updateInput();
+}
+
+function addCalcEntry() {
+  let historyEntry = document.createElement("p");
+  historyEntry.innerHTML =
+    "<p>" +
+    previousInput +
+    operator +
+    currentInput +
+    "=" +
+    currentResult +
+    "<p />";
+
+  document.getElementById("history").appendChild(historyEntry);
 }
 
 function updateInput() {
