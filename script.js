@@ -36,9 +36,8 @@ function add() {
 }
 
 function enter() {
-  operator = "=";
-  addCalcEntry();
-  clearEntry();
+  performOperator();
+  pushInput();
 }
 
 function clearEntry() {
